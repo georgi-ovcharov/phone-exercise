@@ -8,12 +8,13 @@ import { CallModel } from "../models/models";
 
 export default class Call implements CallModel {
   private _date: Date;
-  
+
   private _time: string;
 
   private _dialedNumber: number;
 
   private _duration: number;
+  
 
   get date(): Date {
     return this._date;

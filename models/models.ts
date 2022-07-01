@@ -34,4 +34,6 @@ export interface PhoneModel {
   display: DisplayModel;
   phoneInfo(): string;
   callHistory: string | number[];
+  deleteCall(): void;
+  addCall(): void;
 }

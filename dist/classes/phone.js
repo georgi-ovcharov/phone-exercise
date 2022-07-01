@@ -84,7 +84,6 @@ var Phone = /** @class */ (function () {
             dialedNumber: newCall.dialedNumber,
             duration: newCall.duration,
         };
-        // const callHistoryArr =[newCall.date, newCall.time, newCall.dialedNumber, newCall.duration]
         console.log(callHistoryObj);
         this.callHistory.push(callHistoryObj);
     };
@@ -101,6 +100,12 @@ var Phone = /** @class */ (function () {
     };
     Phone.prototype.clearHistory = function () {
         this.callHistory.length = 0;
+    };
+    Phone.prototype.deleteCall = function () {
+        this.callHistory.pop();
+    };
+    Phone.prototype.addCall = function () {
+        this.makeCall();
     };
     return Phone;
 }());

@@ -105,13 +105,14 @@ export default class Phone implements PhoneModel {
     const duration = Math.floor(Math.random() * 1000);
 
     const newCall = new Call(date, time, dialedNumber, duration);
+
     const callHistoryObj = {
       date: newCall.date,
       time: newCall.time,
       dialedNumber: newCall.dialedNumber,
       duration: newCall.duration,
     };
-    // const callHistoryArr =[newCall.date, newCall.time, newCall.dialedNumber, newCall.duration]
+
     console.log(callHistoryObj);
 
     this.callHistory.push(callHistoryObj);
@@ -132,5 +133,13 @@ export default class Phone implements PhoneModel {
 
   public clearHistory(): void {
     this.callHistory.length = 0;
+  }
+
+  public deleteCall(): void {
+    this.callHistory.pop();
+  }
+
+  public addCall(): void {
+    this.makeCall()
   }
 }
