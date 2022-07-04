@@ -1,10 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var call_1 = require("./call");
-var date = new Date();
-var time = "".concat(date.getHours(), ":").concat(date.getMinutes() < 10 ? "0" : "").concat(date.getMinutes());
-var dialedNumber = Math.floor(359880000000 + Math.random() * 900000);
-var duration = Math.floor(Math.random() * 1000);
 var Phone = /** @class */ (function () {
     function Phone(model, manufacturer, price, owner, battery, display) {
         this._model = model;
@@ -77,6 +73,10 @@ var Phone = /** @class */ (function () {
         return message;
     };
     Phone.prototype.makeCall = function () {
+        var date = new Date();
+        var time = "".concat(date.getHours(), ":").concat(date.getMinutes() < 10 ? "0" : "").concat(date.getMinutes());
+        var dialedNumber = Math.floor(359880000000 + Math.random() * 900000);
+        var duration = Math.floor(Math.random() * 1000);
         var newCall = new call_1.default(date, time, dialedNumber, duration);
         var callHistoryObj = {
             date: newCall.date,

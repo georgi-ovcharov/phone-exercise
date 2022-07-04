@@ -6,13 +6,6 @@ import {
 
 import Call from "./call";
 
-const date = new Date();
-const time = `${date.getHours()}:${
-  date.getMinutes() < 10 ? "0" : ""
-}${date.getMinutes()}`;
-const dialedNumber = Math.floor(359880000000 + Math.random() * 900000);
-const duration = Math.floor(Math.random() * 1000);
-
 export default class Phone implements PhoneModel {
   public callHistory: any[];
 
@@ -87,7 +80,12 @@ export default class Phone implements PhoneModel {
   }
 
   public makeCall(): void {
-
+    const date = new Date();
+    const time = `${date.getHours()}:${
+      date.getMinutes() < 10 ? "0" : ""
+    }${date.getMinutes()}`;
+    const dialedNumber = Math.floor(359880000000 + Math.random() * 900000);
+    const duration = Math.floor(Math.random() * 1000);
 
     const newCall = new Call(date, time, dialedNumber, duration);
 
