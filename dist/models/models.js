@@ -1,6 +1,4 @@
 "use strict";
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-shadow */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BatteryType = void 0;
 var BatteryType;

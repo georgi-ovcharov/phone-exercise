@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-shadow */
-
 export enum BatteryType {
   LiIon = "Li-Ion",
   NiMH = "NiMH",
