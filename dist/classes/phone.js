@@ -58,16 +58,16 @@ var Phone = /** @class */ (function () {
     });
     Phone.prototype.phoneInfo = function () {
         var message = "Model: ".concat(this._model, "\nManufacturer: ").concat(this._manufacturer);
-        if (this._price !== undefined || null) {
+        if (this._price) {
             message += "\nPrice: ".concat(this._price);
         }
-        if (this._owner !== undefined || null) {
+        if (this._owner) {
             message += "\nOwner: ".concat(this._owner);
         }
-        if (this._battery !== undefined || null) {
+        if (this._battery) {
             message += "Battery:\n Model: ".concat(this._battery.model, "\n hoursIde: ").concat(this._battery.hoursIdle, "\n hoursTalk: ").concat(this._battery.hoursTalk);
         }
-        if (this._display !== undefined || null) {
+        if (this._display) {
             message += "\nDisplay: \n colors: ".concat(this._display.colors, "\n size: ").concat(this.display.size, "\"");
         }
         return message;
@@ -87,6 +87,8 @@ var Phone = /** @class */ (function () {
         console.log(callHistoryObj);
         this.callHistory.push(callHistoryObj);
     };
+    Phone.prototype.showHistory = function () {
+    };
     Phone.prototype.totalPrice = function () {
         if (this.callHistory.length < 1) {
             console.log("There were no calls made by this phone");
@@ -99,7 +101,8 @@ var Phone = /** @class */ (function () {
         console.log("Total Price of the calls is ".concat(totalSum, "lv"));
     };
     Phone.prototype.clearHistory = function () {
-        this.callHistory.length = 0;
+        this.callHistory = [];
+        console.log("History cleared");
     };
     Phone.prototype.deleteCall = function () {
         this.callHistory.pop();

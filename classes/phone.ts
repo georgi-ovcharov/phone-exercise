@@ -1,17 +1,5 @@
-/* eslint-disable no-console */
-/* eslint-disable prefer-const */
-/* eslint-disable class-methods-use-this */
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable no-else-return */
-/* eslint-disable no-useless-return */
-/* eslint-disable consistent-return */
-/* eslint-disable no-return-assign */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable no-unused-vars */
 import {
   BatteryModel,
-  CallModel,
   DisplayModel,
   PhoneModel,
 } from "../models/models";
@@ -19,19 +7,14 @@ import {
 import Call from "./call";
 
 export default class Phone implements PhoneModel {
-  private _model: string;
-
-  private _manufacturer: string;
-
-  private _price?: number;
-
-  private _owner?: string;
-
-  private _battery?: BatteryModel;
-
-  private _display?: DisplayModel;
-
   public callHistory: any[];
+
+  private _model: string;
+  private _manufacturer: string;
+  private _price?: number;
+  private _owner?: string;
+  private _battery?: BatteryModel;
+  private _display?: DisplayModel;
 
   get model(): string {
     return this._model;
@@ -80,16 +63,16 @@ export default class Phone implements PhoneModel {
 
   public phoneInfo(): string {
     let message = `Model: ${this._model}\nManufacturer: ${this._manufacturer}`;
-    if (this._price !== undefined || null) {
+    if (this._price) {
       message += `\nPrice: ${this._price}`;
     }
-    if (this._owner !== undefined || null) {
+    if (this._owner) {
       message += `\nOwner: ${this._owner}`;
     }
-    if (this._battery !== undefined || null) {
+    if (this._battery) {
       message += `Battery:\n Model: ${this._battery.model}\n hoursIde: ${this._battery.hoursIdle}\n hoursTalk: ${this._battery.hoursTalk}`;
     }
-    if (this._display !== undefined || null) {
+    if (this._display) {
       message += `\nDisplay: \n colors: ${this._display.colors}\n size: ${this.display.size}"`;
     }
 
@@ -118,6 +101,10 @@ export default class Phone implements PhoneModel {
     this.callHistory.push(callHistoryObj);
   }
 
+  public showHistory(): void {
+    
+  }
+
   public totalPrice(): void {
     if (this.callHistory.length < 1) {
       console.log("There were no calls made by this phone");
@@ -132,7 +119,8 @@ export default class Phone implements PhoneModel {
   }
 
   public clearHistory(): void {
-    this.callHistory.length = 0;
+    this.callHistory = [];
+    console.log("History cleared");
   }
 
   public deleteCall(): void {
@@ -140,6 +128,6 @@ export default class Phone implements PhoneModel {
   }
 
   public addCall(): void {
-    this.makeCall()
+    this.makeCall();
   }
 }

@@ -1,8 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable no-console */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
 var phone_1 = require("./classes/phone");
 var models_1 = require("./models/models");
 function main() {
@@ -13,9 +10,8 @@ function main() {
     phone.makeCall();
     phone.totalPrice();
     console.log("History:");
-    console.log(phone.callHistory.forEach(function (row) { return console.log(row); })); // where does the undefined come from?
+    console.log(phone.callHistory.forEach(function (row) { return console.log(row); }));
     phone.clearHistory();
-    console.log("History cleared");
     console.log("History:");
     console.log(phone.callHistory.forEach(function (row) { return console.log(row); }));
     console.log("Make 3 calls:");

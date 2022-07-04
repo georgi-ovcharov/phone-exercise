@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
 import Phone from "./classes/phone";
 import { BatteryType } from "./models/models";
 
@@ -23,10 +20,9 @@ function main() {
   phone.totalPrice();
   
   console.log("History:");
-  console.log(phone.callHistory.forEach((row) => console.log(row))) // where does the undefined come from?
+  console.log(phone.callHistory.forEach((row) => console.log(row)))
 
   phone.clearHistory();
-  console.log("History cleared");
 
   console.log("History:");
   console.log(phone.callHistory.forEach((row) => console.log(row)))

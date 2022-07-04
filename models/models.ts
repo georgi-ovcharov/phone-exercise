@@ -26,14 +26,14 @@ export interface CallModel {
 }
 
 export interface PhoneModel {
+  phoneInfo(): string;
+  deleteCall(): void;
+  addCall(): void;
   model: string;
   manufacturer: string;
   price: number;
   owner: string;
   battery: BatteryModel;
   display: DisplayModel;
-  phoneInfo(): string;
   callHistory: string | number[];
-  deleteCall(): void;
-  addCall(): void;
 }
