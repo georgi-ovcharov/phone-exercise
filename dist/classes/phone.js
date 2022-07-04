@@ -87,8 +87,6 @@ var Phone = /** @class */ (function () {
         console.log(callHistoryObj);
         this.callHistory.push(callHistoryObj);
     };
-    Phone.prototype.showHistory = function () {
-    };
     Phone.prototype.totalPrice = function () {
         if (this.callHistory.length < 1) {
             console.log("There were no calls made by this phone");

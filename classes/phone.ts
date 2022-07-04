@@ -101,10 +101,6 @@ export default class Phone implements PhoneModel {
     this.callHistory.push(callHistoryObj);
   }
 
-  public showHistory(): void {
-    
-  }
-
   public totalPrice(): void {
     if (this.callHistory.length < 1) {
       console.log("There were no calls made by this phone");
