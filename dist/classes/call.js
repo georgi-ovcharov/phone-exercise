@@ -1,9 +1,4 @@
 "use strict";
-/* eslint-disable class-methods-use-this */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
-/* eslint-disable no-unused-vars */
 Object.defineProperty(exports, "__esModule", { value: true });
 var Call = /** @class */ (function () {
     function Call(date, time, dialedNumber, duration) {
